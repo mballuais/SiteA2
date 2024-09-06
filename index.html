@@ -4,14 +4,173 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        background-color: #000;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        animation: spinBackground 5s linear infinite; /* L'arrière-plan tourne lentement */
+      }
+
+      @keyframes spinBackground {
+        0% {
+          background-color: #000;
+        }
+        25% {
+          background-color: #ff00ff;
+        }
+        50% {
+          background-color: #00ffff;
+        }
+        75% {
+          background-color: #ffcc00;
+        }
+        100% {
+          background-color: #ff0000;
+        }
+      }
+
+      a {
+        display: inline-block;
+        margin: 20px;
+        padding: 15px 30px;
+        font-size: 2em;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(45deg, #ff0066, #00ffcc, #ffcc00);
+        border-radius: 20px;
+        text-decoration: none;
+        box-shadow: 0 0 20px #fff, 0 0 50px #ff0066, 0 0 100px #00ffcc;
+        position: relative;
+        animation: glitch 1.5s infinite;
+        transform-origin: center;
+        transition: transform 0.2s ease;
+      }
+
+      a:hover {
+        transform: scale(1.5) rotate(360deg); /* Grossissement et rotation au survol */
+        filter: hue-rotate(360deg);
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: translate(2px, -2px) skew(2deg, 2deg);
+        }
+        25% {
+          transform: translate(-2px, 2px) skew(-2deg, -2deg);
+        }
+        50% {
+          transform: translate(5px, -5px) skew(5deg, 5deg);
+          color: #ff0000;
+        }
+        75% {
+          transform: translate(-5px, 5px) skew(-5deg, -5deg);
+          color: #00ff00;
+        }
+        100% {
+          transform: translate(0, 0) skew(0deg, 0deg);
+          color: #fff;
+        }
+      }
+
+      a::before,
+      a::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: -1;
+        pointer-events: none;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0.4;
+        }
+      }
+
+      a:nth-child(odd) {
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+      }
+
+      a:nth-child(even) {
+        animation-duration: 1.2s;
+        animation-timing-function: linear;
+      }
+
+      /* Particules folles en fond */
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        z-index: -1;
+        animation: particles 10s infinite linear;
+      }
+
+      @keyframes particles {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 100vw 100vh;
+        }
+      }
+
+      /* Animation aléatoire qui fait trembler les liens */
+      @keyframes wildShake {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(5px, -5px);
+        }
+        50% {
+          transform: translate(-5px, 5px);
+        }
+        75% {
+          transform: translate(10px, -10px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      a:hover {
+        animation: wildShake 0.2s infinite; /* Tremblement violent au survol */
+      }
+    </style>
   </head>
   <body>
-    <a href="matteo.html">Page de Mattéo</a><br>
-    <a href="benjamin.html">Page de Benjamin</a><br>
-    <a href="clementc.html">Page de Clément</a><br>
-    <a href="godefroy.html">Page de Godefroy</a><br>
-    <a href="lewis.html">Page de Lewis</a><br>
-    <a href="matteo.html">Page de Erwin</a><br>
-    <a href="pre.html">Page de Ludovic</a><br>
+    <a href="matteo.html">Page de Mattéo</a><br />
+    <a href="benjamin.html">Page de Benjamin</a><br />
+    <a href="clementc.html">Page de Clément</a><br />
+    <a href="godefroy.html">Page de Godefroy</a><br />
+    <a href="lewis.html">Page de Lewis</a><br />
+    <a href="erwin.html">Page de Erwin</a><br />
+    <a href="pre.html">Page de Ludovic</a><br />
   </body>
 </html>

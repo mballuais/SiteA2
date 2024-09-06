@@ -3,96 +3,176 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matteo Balluais</title>
+    <title>Matteo Balluais - Légende Urbaine</title>
     <style>
       body {
-        background-color: #ff00ff;
-        font-family: "Comic Sans MS", cursive, sans-serif;
+        background: linear-gradient(135deg, #000000, #550a8a, #ff00ff, #ff0000);
+        font-family: "Press Start 2P", cursive, sans-serif;
         color: #00ff00;
         text-align: center;
         padding: 50px;
+        animation: bgChange 10s infinite alternate;
+      }
+
+      @keyframes bgChange {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
       }
 
       h1 {
-        font-size: 5em;
-        color: #ffff00;
-        text-shadow: 5px 5px 0px #0000ff;
+        font-size: 6em;
+        color: #ffeb3b;
+        text-shadow: 10px 10px 20px #0000ff, 0 0 30px #00ff00, 0 0 50px #ff0000;
         transform: rotate(-10deg);
+        animation: glitch 1.5s infinite;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-5px, 5px);
+        }
+        40% {
+          transform: translate(5px, -5px);
+        }
+        60% {
+          transform: translate(-5px, -5px);
+        }
+        80% {
+          transform: translate(5px, 5px);
+        }
+        100% {
+          transform: translate(0);
+        }
       }
 
       h2 {
-        font-size: 4em;
-        color: #042135;
-        text-shadow: 2px 2px 0px #00ffff;
+        font-size: 4.5em;
+        color: #00ff00;
+        text-shadow: 5px 5px 10px #ff0000, 0 0 20px #00ffff;
         transform: rotate(5deg);
       }
 
       h3 {
-        font-size: 3em;
-        color: #00ffff;
-        text-shadow: 3px 3px 0px #ff00ff;
+        font-size: 4em;
+        color: #ff00ff;
+        text-shadow: 5px 5px 10px #00ff00, 0 0 20px #0000ff;
         transform: rotate(-5deg);
       }
 
       img {
-        border: 10px solid #00ff00;
+        border: 15px solid #ff00ff;
         border-radius: 50%;
-        box-shadow: 10px 10px 20px #ff0000;
+        box-shadow: 0 0 40px #ff00ff, 0 0 80px #00ff00, 0 0 100px #ff0000;
         width: 300px;
         height: 480px;
-        transition: transform 0.5s;
+        transition: transform 1s, box-shadow 1s, border 1s;
+        animation: neonPulse 2s infinite alternate;
+      }
+
+      @keyframes neonPulse {
+        0% {
+          box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ff00;
+        }
+        100% {
+          box-shadow: 0 0 60px #ff0000, 0 0 100px #00ffff;
+        }
       }
 
       img:hover {
-        transform: scale(1.5) rotate(360deg);
+        transform: scale(2) rotate(720deg);
+        border-color: #00ff00;
+        box-shadow: 0 0 80px #00ffff, 0 0 120px #ff00ff;
       }
 
       p {
-        font-size: 2em;
-        color: #ffff00;
-        background-color: #00ff00;
-        border: 5px dashed #ff0000;
-        padding: 20px;
-        border-radius: 20px;
+        font-size: 2.5em;
+        color: #000000;
+        background: linear-gradient(45deg, #ff0000, #00ff00);
+        border: 8px double #000000;
+        padding: 30px;
+        border-radius: 50px;
         margin-top: 20px;
-        text-shadow: 2px 2px 0px #0000ff;
+        animation: textPulse 3s infinite alternate;
+        letter-spacing: 3px;
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ff0000;
+      }
+
+      @keyframes textPulse {
+        0% {
+          text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ff00;
+        }
+        100% {
+          text-shadow: 0 0 60px #ff0000, 0 0 100px #0000ff;
+        }
       }
 
       fieldset {
-        border: 5px solid #ff00ff;
+        border: 10px solid #ff00ff;
         padding: 20px;
-        background-color: #0000ff;
-        border-radius: 10px;
-        transform: skew(10deg);
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 30px;
+        animation: wiggle 1s infinite;
+      }
+
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(1deg);
+        }
+        50% {
+          transform: rotate(-1deg);
+        }
       }
 
       legend {
-        font-size: 2.5em;
-        color: #00ff00;
-        text-shadow: 2px 2px 0px #ff0000;
-        transform: rotate(-5deg);
+        font-size: 3em;
+        color: #00ffff;
+        text-shadow: 5px 5px 10px #ff0000;
+        animation: flash 2s infinite;
+      }
+
+      @keyframes flash {
+        0% {
+          color: #00ffff;
+        }
+        50% {
+          color: #ff00ff;
+        }
+        100% {
+          color: #00ffff;
+        }
       }
 
       label {
-        font-size: 2em;
-        color: #ff0000;
-        text-shadow: 2px 2px 0px #00ffff;
+        font-size: 2.5em;
+        color: #ffeb3b;
+        text-shadow: 5px 5px 10px #ff0000;
+        letter-spacing: 2px;
       }
 
       input[type="radio"] {
         transform: scale(2);
-        margin: 0 10px;
+        margin: 0 20px;
       }
 
       input[type="radio"]:checked + label {
-        color: #ffff00;
-        text-shadow: 4px 4px 0px #ff0000;
+        color: #ff0000;
+        text-shadow: 5px 5px 10px #00ff00;
       }
     </style>
   </head>
   <body>
     <h1>Matteo Balluais</h1>
-    <h3>19ans</h3>
+    <h3>19 ans</h3>
     <h2>Permifié</h2>
     <img
       src="PhotoTravail.jpg"
@@ -101,15 +181,15 @@
       height="480"
     />
     <p>
-      Je suis un jeune homme de 19 ans, je suis permifié et je suis à la
-      recherche d'un emploi. Je suis motivé et je suis prêt à apprendre de
-      nouvelles choses. Je suis disponible pour un entretien à tout moment. Je
-      me tiens à votre disposition pour tout renseignement complémentaire.
+      Wesh ! Matteo, 19 ans, prêt à tout déchirer. Permifié, chaud pour
+      n'importe quel taf ! Ambition XXL, j'attends ton appel ! Let's gooo !
     </p>
     <fieldset>
-      <legend>J'embauche ?</legend>
-      <label><input id="indoor" type="radio" name="non" checked /> Non</label>
-      <label><input id="outdoor" type="radio" name="oui" /> Oui ^^</label>
+      <legend>On embauche ?</legend>
+      <label><input id="non" type="radio" name="embauche" checked /> Non</label>
+      <label
+        ><input id="oui" type="radio" name="embauche" /> Oui, direct !</label
+      >
     </fieldset>
   </body>
 </html>
